@@ -1,0 +1,126 @@
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+#masthead {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 35% auto;
+  grid-template-columns: 35% auto;
+  position: relative;
+  padding: 0 20px 0 10px;
+}
+
+.custom-logo {
+  padding: 20px 0 0;
+  width: 340px;
+  max-width: 100%;
+  margin: 0 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.entry-title {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 767px) {
+  #masthead {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 200px auto;
+    grid-template-columns: 200px auto;
+    position: relative;
+    padding-bottom: 0;
+    padding: 0 10px 10px 0;
+  }
+
+  .custom-logo {
+    width: 200px;
+    max-width: 100%;
+    margin: 0 20px;
+    z-index: 1;
+    position: relative;
+  }
+}
+
+.header-image img {
+  width: 100%;
+  margin: 0;
+}
+
+.site-title,
+.site-description {
+  position: fixed;
+  top: -100px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.site-footer {
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+  padding: 80px 0 0;
+}
+
+.site-footer>.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.site-footer ul {
+  margin: 0;
+  padding: 0 15px;
+}
+
+.site-footer a {
+  color: var(--background-color);
+}
+
+.site-footer a:hover {
+  color: #2a2a98;
+}
+
+.site-footer .site-info {
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  padding: 5px;
+}
+
+.site-footer .site-info a {
+  color: var(--primary-color);
+}
+
+.site-header {
+  grid-area: header;
+}
+
+.site-main {
+  grid-area: main;
+  overflow: hidden;
+  /* Resolves issue with <pre> elements forcing full width. */
+}
+
+.widget-area {
+  grid-area: sidebar;
+}
+
+#right-sidebar {
+  background-color: var(--border-color);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#right-sidebar h2 {
+  margin-top: 0;
+}
+

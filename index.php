@@ -67,9 +67,9 @@ get_header();
 				endif;
 				?>
 			</div>
-			<!-- <div id="right-sidebar">
+			<div id="right-sidebar">
 				<?php dynamic_sidebar( 'sidebar-right' );?>
-			</div> -->
+			</div>
 		</div>
 	</main><!-- #main -->
 <?php

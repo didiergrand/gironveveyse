@@ -134,6 +134,36 @@
   padding: 20px;
 }
 
+/* Layout en colonnes pour la page index */
+.site-main .container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+  align-items: start;
+}
+
+#news {
+  min-width: 0; /* Permet au contenu de se rétrécir correctement */
+}
+
+@media screen and (max-width: 1024px) {
+  .site-main .container {
+    grid-template-columns: 1fr 250px;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .site-main .container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  #right-sidebar {
+    order: -1; /* Optionnel: mettre la sidebar en haut sur mobile */
+  }
+}
+
 
 .site-footer {
   background-color: var(--foreground-color);

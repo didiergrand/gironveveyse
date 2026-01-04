@@ -50,8 +50,8 @@ function giron_veveyse_setup() {
 	//* Add support for custom header
 	add_theme_support( 'custom-header', array(
 		'header-text' => false,
-		'height' => 510,
-		'width' => 2400,
+		'height' => 800,
+		'width' => 1400,
 	) );
 
 

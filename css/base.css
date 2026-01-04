@@ -156,17 +156,17 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #2a2a98;
+  color: var(--link-color);
 }
 
 a:visited {
-  color: #1D3349;
+  color: var(--tertiary-color);
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: #3f3fdf;
+  color: var(--secondary-color);
 }
 
 a:focus {

@@ -16,22 +16,24 @@ get_header();
 ?>
 <div class="header-image">
 	<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-	<div class="header-image-content">
-		<?php
-		if ( is_front_page() && is_home() ) :
-			?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<div class="container">
+		<div class="header-image-content">
 			<?php
-		else :
-			?>
-			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-		endif;
-		$giron_veveyse_description = get_bloginfo( 'description', 'display' );
-		if ( $giron_veveyse_description || is_customize_preview() ) :
-			?>
-			<p class="site-description"><?php echo $giron_veveyse_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-		<?php endif; ?>
+			if ( is_front_page() && is_home() ) :
+				?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php
+			else :
+				?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			endif;
+			$giron_veveyse_description = get_bloginfo( 'description', 'display' );
+			if ( $giron_veveyse_description || is_customize_preview() ) :
+				?>
+				<p class="site-description"><?php echo $giron_veveyse_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+			<?php endif; ?>
+		</div>
 	</div>
 </div>
 	<main id="primary" class="site-main">

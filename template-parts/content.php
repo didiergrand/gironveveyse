@@ -20,8 +20,7 @@
 	?>
 	</header><!-- .entry-header -->
 
-	<?php saint_martin_fr_post_thumbnail(); ?>
-	<div class="container">
+	<?php giron_veveyse_post_thumbnail(); ?>
 	<div class="entry-content">
 		<?php
 		the_content(
@@ -47,5 +46,4 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-</div>
 </article><!-- #post-<?php the_ID(); ?> -->

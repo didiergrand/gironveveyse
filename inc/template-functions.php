@@ -35,3 +35,54 @@ function giron_veveyse_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'giron_veveyse_pingback_header' );
+
+/**
+ * Get default header image URL.
+ *
+ * @return string Default header image URL.
+ */
+function giron_veveyse_get_default_header_image() {
+	return 'https://www.giron-veveyse.ch/wp-content/uploads/2022/10/cropped-banner_giron_veveyse_2022_3-scaled-1.jpg';
+}
+
+/**
+ * Get header image for post/page.
+ *
+ * @param int $post_id Post ID.
+ * @return string Header image URL.
+ */
+function giron_veveyse_get_header_image( $post_id = null ) {
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
+	if ( has_post_thumbnail( $post_id ) ) {
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'single-post-thumbnail' );
+		return $image[0];
+	}
+
+	return giron_veveyse_get_default_header_image();
+}
+
+/**
+ * Display header image with title for single posts/pages.
+ *
+ * @param string $title The title to display.
+ */
+function giron_veveyse_display_header_image( $title = '' ) {
+	$image = giron_veveyse_get_header_image();
+	?>
+	<div class="header-image">
+		<div class="header-image-bg" style="background-image: url(<?php echo esc_url( $image ); ?>);"></div>
+		<div class="container">
+			<div class="header-image-content">
+				<?php if ( $title ) : ?>
+					<h1 class="entry-title"><?php echo wp_kses_post( $title ); ?></h1>
+				<?php else : ?>
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+	<?php
+}

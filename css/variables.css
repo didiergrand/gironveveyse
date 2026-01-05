@@ -1,13 +1,13 @@
 :root {
   --primary-color: #1A8231;
-  --secondary-color: #00D72F;
+  --secondary-color: #084916;
   --tertiary-color: #FAE21C;
   --background-color: #FFFFFF;
   --foreground-color: #000000;
   --text-color: #000000;
   --link-color: #1A8231;
-  --border-color: #000000;
-  --background-gray: #F8F9FA;
+  --border-color: #adb6ad;
+  --background-gray: #ecf1f7;
 
 /* 
   --yellow: #eda737;

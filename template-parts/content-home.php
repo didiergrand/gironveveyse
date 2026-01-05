@@ -42,4 +42,3 @@
 		);
 		?>
 </article><!-- home #post-<?php the_ID(); ?> -->
-<hr>

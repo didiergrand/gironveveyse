@@ -28,16 +28,18 @@ endif;
 
 	<main id="primary" class="site-main">
 		<div class="container">
-			<?php
-			while ( have_posts() ) :
-				the_post();
+			<div class="content-wrapper">
+				<?php
+				while ( have_posts() ) :
+					the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+					get_template_part( 'template-parts/content', 'page' );
 
-			endwhile; // End of the loop.
-			?>
-			<div id="right-sidebar">
-				<?php dynamic_sidebar( 'sidebar-right' );?>
+				endwhile; // End of the loop.
+				?>
+				<div id="right-sidebar">
+					<?php dynamic_sidebar( 'sidebar-right' );?>
+				</div>
 			</div>
 		</div>
 	</main><!-- #main -->

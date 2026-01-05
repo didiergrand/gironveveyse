@@ -18,8 +18,6 @@
 		
 		giron_veveyse_post_thumbnail(); ?>
 
-<div class="container">
-	<div class="entry-content">
 		<?php
 		the_content(
 			sprintf(
@@ -43,7 +41,5 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
-</div>
 </article><!-- home #post-<?php the_ID(); ?> -->
 <hr>

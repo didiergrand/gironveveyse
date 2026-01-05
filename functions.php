@@ -198,6 +198,18 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Limit posts on homepage to 3.
+ */
+function giron_veveyse_limit_homepage_posts( $query ) {
+	if ( ! is_admin() && $query->is_main_query() ) {
+		if ( is_home() || is_front_page() ) {
+			$query->set( 'posts_per_page', 3 );
+		}
+	}
+}
+add_action( 'pre_get_posts', 'giron_veveyse_limit_homepage_posts' );
+
 
 
 

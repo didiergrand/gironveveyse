@@ -38,6 +38,8 @@ get_header();
 		<div class="container">
 
 			<div id="news">
+				<h2>Actualités</h2>
+				<div class="news-content">
 				<?php
 				if ( have_posts() ) :
 
@@ -61,13 +63,13 @@ get_header();
 						get_template_part( 'template-parts/content', 'home' );
 
 					endwhile;
-					the_posts_navigation();
 				else :
 					get_template_part( 'template-parts/content', 'none' );
 				endif;
 				?>
 				<div class="news-button-wrapper">
 					<a href="<?php echo esc_url( home_url( '/categorie/actualites/' ) ); ?>" class="btn-default"><?php esc_html_e( 'Voir toutes les actualités', 'giron-veveyse' ); ?></a>
+				</div>
 				</div>
 			</div>
 			<div id="right-sidebar">

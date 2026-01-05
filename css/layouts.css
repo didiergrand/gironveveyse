@@ -142,9 +142,6 @@
 
 #news {
   min-width: 0; /* Permet au contenu de se rétrécir correctement */
-  background-color: var(--background-color);
-  padding: 8px 32px 32px;
-  border-radius: 8px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -215,14 +212,13 @@
 .widget-area {
   grid-area: sidebar;
 }
-
-#right-sidebar {
+.sidebar_content {
   background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+.news-content {
   padding: 20px;
   border-radius: 8px;
+  background-color: var(--background-color);
 }
-
-#right-sidebar h2 {
-  margin-top: 0;
-}
-

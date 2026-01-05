@@ -222,3 +222,6 @@
   border-radius: 8px;
   background-color: var(--background-color);
 }
+article {
+  margin-bottom: 32px;
+}

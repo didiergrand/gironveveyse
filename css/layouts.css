@@ -13,7 +13,7 @@
 
 .custom-logo {
   padding: 20px 0 0;
-  width: 340px;
+  width: 200px;
   max-width: 100%;
   margin: 0 20px;
   z-index: 1;
@@ -23,7 +23,6 @@
 .entry-title {
   max-width: 1400px;
   margin: 2rem auto;
-  padding: 0 20px;
 }
 
 @media screen and (max-width: 767px) {
@@ -144,6 +143,9 @@
 
 #news {
   min-width: 0; /* Permet au contenu de se rétrécir correctement */
+  background-color: var(--background-color);
+  padding: 8px 32px 32px;
+  border-radius: 8px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -216,9 +218,9 @@
 }
 
 #right-sidebar {
-  background-color: var(--border-color);
+  background-color: var(--background-color);
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 #right-sidebar h2 {

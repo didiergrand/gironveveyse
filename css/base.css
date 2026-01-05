@@ -99,7 +99,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-  background: #fff;
+  background: var(--background-gray);
 }
 
 hr {

@@ -157,7 +157,7 @@
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -252,4 +252,27 @@
 }
 article {
   margin-bottom: 32px;
+  h2 {
+    margin: 0 0 0 0;
+  }
+}
+.entry-meta{
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+.nav-links{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: calc(100% - 330px);
+  > div > a {
+    padding: 8px 16px;
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 12px;
+  }
+  > div > a:hover {
+    color: var(--secondary-color);
+  }
 }

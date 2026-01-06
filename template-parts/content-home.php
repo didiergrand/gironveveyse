@@ -9,36 +9,44 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1>', '</h1>' );
-		else :
-			the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-		
-		giron_veveyse_post_thumbnail(); ?>
+	<?php
+	if ( is_singular() ) :
+		the_title( '<h1>', '</h1>' );
+	else :
+		the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+	endif;
 
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'giron-veveyse' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'giron-veveyse' ),
-				'after'  => '</div>',
-			)
-		);
+	// Affiche la date pour les articles de la page d'accueil.
+	if ( 'post' === get_post_type() ) :
 		?>
+		<div class="entry-meta">
+			<?php giron_veveyse_posted_on(); ?>
+		</div>
+		<?php
+	endif;
+
+	giron_veveyse_post_thumbnail();
+
+	the_content(
+		sprintf(
+			wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'giron-veveyse' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			wp_kses_post( get_the_title() )
+		)
+	);
+
+	wp_link_pages(
+		array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'giron-veveyse' ),
+			'after'  => '</div>',
+		)
+	);
+	?>
 </article><!-- home #post-<?php the_ID(); ?> -->

@@ -161,7 +161,9 @@
   margin: 0 auto;
   padding: 20px;
 }
-
+.container-small {
+  max-width: 800px;
+}
 /* Layout en colonnes pour le contenu principal */
 .content-wrapper {
   display: grid;

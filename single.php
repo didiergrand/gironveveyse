@@ -22,8 +22,7 @@ endif;
 ?>
 
 	<main id="primary" class="site-main">
-		<div class="container">
-			<div class="content-wrapper">
+		<div class="container container-small">
 				<?php
 				while ( have_posts() ) :
 					the_post();
@@ -32,10 +31,6 @@ endif;
 
 				endwhile; // End of the loop.
 				?>
-				<div id="right-sidebar">
-					<?php dynamic_sidebar( 'sidebar-right' );?>
-				</div>
-			</div>
 		</div>
 	</main><!-- #main -->
 
@@ -45,7 +40,7 @@ endif;
 		while ( have_posts() ) :
 			the_post();
 			?>
-			<div class="container">
+			<div class="container container-small">
 				<?php
 				the_post_navigation(
 					array(

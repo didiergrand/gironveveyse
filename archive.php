@@ -18,11 +18,11 @@ if ( have_posts() ) {
 ?>
 
 	<main id="primary" class="site-main">
-		<div class="container">
+		<div class="container container-small">
 			<?php if ( have_posts() ) : ?>
 
-				<div class="content-wrapper">
 					<div id="news">
+					<div class="news-content">
 						<?php
 						/* Start the Loop */
 						while ( have_posts() ) :
@@ -39,10 +39,6 @@ if ( have_posts() ) {
 
 						the_posts_navigation();
 						?>
-					</div>
-
-					<div id="right-sidebar">
-						<?php dynamic_sidebar( 'sidebar-right' );?>
 					</div>
 				</div>
 

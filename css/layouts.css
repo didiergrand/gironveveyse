@@ -247,7 +247,8 @@
   border-radius: 8px;
   padding: 20px;
 }
-.news-content {
+.news-content,
+.entry-content {
   padding: 20px;
   border-radius: 8px;
   background-color: var(--background-color);
@@ -267,7 +268,6 @@ article {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  width: calc(100% - 330px);
   > div > a {
     padding: 8px 16px;
     color: var(--link-color);

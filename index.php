@@ -51,6 +51,12 @@ get_header();
 								<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 							</header>
 							<?php
+						else:
+							?>
+							<header>
+								<h2 class="page-title screen-reader-text"><?php single_post_title(); ?></h2>
+							</header>
+							<?php
 						endif;
 
 						/* Start the Loop */

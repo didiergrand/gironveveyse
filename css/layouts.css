@@ -278,3 +278,12 @@ article {
     color: var(--secondary-color);
   }
 }
+.wp-block-table td, .wp-block-table th {
+  border: 1px solid var(--border-color);
+}
+.wp-block-table th {
+  background-color: var(--background-gray);
+}
+.wp-block-table td {
+  background-color: var(--background-color);
+}

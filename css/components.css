@@ -185,7 +185,7 @@
     width: 100vw;
     background: #fff;
     overflow: auto;
-    z-index: 2;
+    z-index: 3;
   }
 
   #primary-menu>li {

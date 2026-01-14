@@ -293,3 +293,21 @@ article {
 .wp-block-file:not(.wp-element-button) {
   font-size: 0.9rem;
 }
+.wp-block-file__button:hover{
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.wp-block-file__button:active {
+  transform: translateY(0);
+}
+.wp-block-file__button:focus {
+  outline: none;
+}
+.wp-block-file__button:focus-visible {
+  outline: 2px solid var(--secondary-color);
+}
+.wp-block-file__button:focus-visible:active {
+  outline: 2px solid var(--secondary-color);
+}

@@ -56,6 +56,16 @@ function giron_veveyse_get_header_image( $post_id = null ) {
 		$post_id = get_the_ID();
 	}
 
+	// For posts, always use the site header image (same as homepage)
+	if ( get_post_type( $post_id ) === 'post' ) {
+		$header_image = get_header_image();
+		if ( $header_image ) {
+			return $header_image;
+		}
+		return giron_veveyse_get_default_header_image();
+	}
+
+	// For pages, use featured image if available, otherwise default header image
 	if ( has_post_thumbnail( $post_id ) ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'single-post-thumbnail' );
 		return $image[0];

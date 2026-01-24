@@ -290,14 +290,86 @@ article {
 .wp-block-table td {
   background-color: var(--background-color);
 }
-.wp-block-file:not(.wp-element-button) {
-  font-size: 0.9rem;
+@media (max-width: 768px) {
+  thead {
+    display: none;
+  }
+  tr {
+    display: block;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem;
+  }
+  td {
+    display: block;
+    width: 100%;
+    border: 0 !important;
+    &:first-child {
+      font-weight: 700;
+    }
+  }
 }
-.wp-block-file__button:hover{
-  background-color: var(--secondary-color);
+
+
+/* Button
+--------------------------------------------- */
+.wp-block-file__button,
+.btn-default {
+  display: inline-block;
+  padding: 8px 24px;
+  background-color: var(--link-color);
   color: var(--background-color);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.wp-block-file__button:hover,
+.wp-block-file__button:focus,
+.wp-block-file__button:active,
+.wp-block-file__button:focus-visible,
+.btn-default:hover,
+.btn-default:focus {
+  background-color: var(--secondary-color);
+  color: var(--background-color) !important;
   transform: translateY(-2px);
   text-decoration: none;
+}
+
+.btn-default:active {
+  transform: translateY(0);
+}
+
+
+.wp-block-file {
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
+}
+@media (max-width: 768px) {
+  .wp-block-file {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wp-block-file *+.wp-block-file__button {
+    margin-left: 0;
+    margin-top: .75em;
+  }
+}
+.wp-block-file a:not(.wp-block-file__button) {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  width: fit-content;
+}
+.wp-block-file:not(.wp-element-button) {
+  font-size: 0.9rem;
 }
 .wp-block-file__button:active {
   transform: translateY(0);

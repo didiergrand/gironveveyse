@@ -199,7 +199,6 @@
 .site-footer {
   background-color: var(--primary-color);
   color: var(--background-color);
-  padding: 10px 0;
 }
 
 .site-footer>.container {

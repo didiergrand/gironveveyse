@@ -5,8 +5,8 @@
 #masthead {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 35% auto;
-  grid-template-columns: 35% auto;
+  -ms-grid-columns: 25% auto;
+  grid-template-columns: 25% auto;
   position: relative;
   padding: 0 20px 0 10px;
 }
@@ -199,7 +199,7 @@
 .site-footer {
   background-color: var(--primary-color);
   color: var(--background-color);
-  padding: 80px 0 0;
+  padding: 10px 0;
 }
 
 .site-footer>.container {
@@ -219,7 +219,7 @@
 }
 
 .site-footer a:hover {
-  color: var(--secondary-color);
+  color: var(--tertiary-color);
 }
 
 .site-footer .site-info {

@@ -20,7 +20,9 @@
   text-decoration: none;
   font-weight: 400;
 }
-
+#primary-menu a:hover {
+  color: var(--secondary-color);
+}
 #primary-menu li {
   list-style-type: none;
 }

@@ -14,17 +14,27 @@ const responsive = (navigation) => {
 }
 const desactive = () =>{
 	submenubtn.forEach(e => {
-		e.querySelector('ul').classList.remove('active');
+		const ul = e.querySelector('ul');
+		ul.classList.remove('active', 'align-right');
 	})
 }
 const active = (submenu) => {
-	if (submenu.className === "sub-menu active") {
-		submenu.className = "sub-menu";
+	if (submenu.classList.contains('active')) {
+		submenu.classList.remove('active', 'align-right');
 	}
-	else if (submenu.className === "sub-menu") {
+	else {
 		desactive();
-		submenu.className += " active";
+		submenu.classList.add('active');
 
+		// En desktop, vérifier si le sous-menu déborde à droite
+		if (window.innerWidth > 1200) {
+			requestAnimationFrame(() => {
+				const rect = submenu.getBoundingClientRect();
+				if (rect.right > window.innerWidth - 10) {
+					submenu.classList.add('align-right');
+				}
+			});
+		}
 	} 
 }
 window.onload = () => {

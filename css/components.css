@@ -36,7 +36,7 @@
   border-radius: 5px;
   line-height: 24px;
   font-size: 16px;
-  z-index: 2;
+  z-index: 20;
   min-width: 200px;
 }
 
@@ -252,10 +252,26 @@
 
   #primary-menu>li.menu-item-has-children {
     padding: 0 20px;
+    position: relative;
   }
 
   #primary-menu .sub-menu {
     margin-left: -20px;
+  }
+
+  #primary-menu .sub-menu.active {
+    top: 100%;
+  }
+
+  #primary-menu .sub-menu.align-right {
+    right: 0;
+    margin-left: 0;
+  }
+
+  #primary-menu .sub-menu.align-right::before {
+    left: auto;
+    margin-left: auto;
+    margin-right: 5px;
   }
 }
 

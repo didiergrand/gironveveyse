@@ -105,10 +105,13 @@ function giron_veveyse_display_header_image( $title = '' ) {
 function giron_veveyse_display_archive_header_image( $title = '' ) {
 	$image = giron_veveyse_get_default_header_image();
 	
-	// Try to get category image if available
-	if ( is_category() ) {
-		$category = get_queried_object();
-		// You can add custom field support for category images here if needed
+	// Use taxonomy image from "Categories Images" plugin if available
+	if ( ( is_category() || is_tax() ) && function_exists( 'z_taxonomy_image_url' ) ) {
+		$term_id = get_queried_object_id();
+		$taxonomy_image = z_taxonomy_image_url( $term_id, 'full', false );
+		if ( $taxonomy_image ) {
+			$image = $taxonomy_image;
+		}
 	}
 	
 	?>

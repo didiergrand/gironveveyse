@@ -29,7 +29,22 @@ endif;
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'gallery-page' ); ?>>
 				<div class="entry-content">
 					<?php
-					the_content();
+					$content = get_the_content();
+
+					if ( has_blocks( $content ) ) {
+						$blocks = parse_blocks( $content );
+						$blocks = array_filter(
+							$blocks,
+							static function ( $block ) {
+								return 'core/post-featured-image' !== ( $block['blockName'] ?? '' );
+							}
+						);
+
+						echo apply_filters( 'the_content', serialize_blocks( $blocks ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					} else {
+						the_content();
+					}
+
 					wp_link_pages(
 						array(
 							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'giron-veveyse' ),

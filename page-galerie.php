@@ -9,17 +9,6 @@
 get_header();
 ?>
 
-<?php
-if ( have_posts() ) :
-	while ( have_posts() ) :
-		the_post();
-		giron_veveyse_display_header_image();
-		break;
-	endwhile;
-	rewind_posts();
-endif;
-?>
-
 <main id="primary" class="site-main">
 	<div class="container">
 		<?php
@@ -27,32 +16,9 @@ endif;
 			the_post();
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'gallery-page' ); ?>>
-				<div class="entry-content">
-					<?php
-					$content = get_the_content();
-
-					if ( has_blocks( $content ) ) {
-						$blocks = parse_blocks( $content );
-						$blocks = array_filter(
-							$blocks,
-							static function ( $block ) {
-								return 'core/post-featured-image' !== ( $block['blockName'] ?? '' );
-							}
-						);
-
-						echo apply_filters( 'the_content', serialize_blocks( $blocks ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					} else {
-						the_content();
-					}
-
-					wp_link_pages(
-						array(
-							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'giron-veveyse' ),
-							'after'  => '</div>',
-						)
-					);
-					?>
-				</div>
+				<header class="entry-header">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				</header>
 			</article>
 			<?php
 		endwhile;

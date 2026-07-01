@@ -9,7 +9,9 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php giron_veveyse_post_thumbnail(); ?>
+	<?php if ( ! has_category( 20 ) ) : ?>
+		<?php giron_veveyse_post_thumbnail(); ?>
+	<?php endif; ?>
 	<div class="entry-content">
 		<?php
 		the_content(
@@ -30,4 +32,3 @@
 		?>
 	</div><!-- .entry-content -->
 </article><!-- post #post-<?php the_ID(); ?> -->
-

@@ -204,12 +204,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 function giron_veveyse_limit_homepage_posts( $query ) {
 	if ( ! is_admin() && $query->is_main_query() ) {
 		if ( is_home() || is_front_page() ) {
+			$query->set( 'cat', 18 );
 			$query->set( 'posts_per_page', 3 );
 		}
 	}
 }
 add_action( 'pre_get_posts', 'giron_veveyse_limit_homepage_posts' );
-
 
 
 

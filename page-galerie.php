@@ -9,21 +9,19 @@
 get_header();
 ?>
 
+<?php
+if ( have_posts() ) :
+	while ( have_posts() ) :
+		the_post();
+		giron_veveyse_display_header_image();
+		break;
+	endwhile;
+	rewind_posts();
+endif;
+?>
+
 <main id="primary" class="site-main">
 	<div class="container">
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class( 'gallery-page' ); ?>>
-				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				</header>
-			</article>
-			<?php
-		endwhile;
-		?>
-
 		<?php
 		$gallery_query = new WP_Query(
 			array(

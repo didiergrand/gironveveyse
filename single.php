@@ -8,6 +8,8 @@
  */
 
 get_header();
+
+$giron_veveyse_single_container_class = has_category( 20, get_queried_object_id() ) ? 'container' : 'container container-small';
 ?>
 
 <?php
@@ -22,7 +24,7 @@ endif;
 ?>
 
 	<main id="primary" class="site-main">
-		<div class="container container-small">
+		<div class="<?php echo esc_attr( $giron_veveyse_single_container_class ); ?>">
 				<?php
 				while ( have_posts() ) :
 					the_post();
@@ -40,7 +42,7 @@ endif;
 		while ( have_posts() ) :
 			the_post();
 			?>
-			<div class="container container-small">
+			<div class="<?php echo esc_attr( $giron_veveyse_single_container_class ); ?>">
 				<?php
 				the_post_navigation(
 					array(

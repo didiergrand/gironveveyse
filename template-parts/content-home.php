@@ -27,20 +27,30 @@
 
 	giron_veveyse_post_thumbnail();
 
-	the_content(
-		sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'giron-veveyse' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			wp_kses_post( get_the_title() )
-		)
-	);
+	if ( has_category( 20 ) ) :
+		?>
+		<p>
+			<a class="btn-default" href="<?php the_permalink(); ?>">
+				<?php esc_html_e( 'Voir la galerie', 'giron-veveyse' ); ?>
+			</a>
+		</p>
+		<?php
+	else :
+		the_content(
+			sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'giron-veveyse' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				wp_kses_post( get_the_title() )
+			)
+		);
+	endif;
 
 	wp_link_pages(
 		array(
